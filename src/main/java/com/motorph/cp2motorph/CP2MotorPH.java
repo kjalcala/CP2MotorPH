@@ -11,6 +11,6 @@ package com.motorph.cp2motorph;
 public class CP2MotorPH {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("test");
     }
 }
