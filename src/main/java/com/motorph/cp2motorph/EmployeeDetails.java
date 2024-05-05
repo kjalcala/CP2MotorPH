@@ -59,7 +59,7 @@ public class EmployeeDetails {
         int index = getEmployeeNumber();
         int transaction = chooseTransaction();
         if (index >= 0 && index < employees.length) {
-            if (transaction == 1) {
+            if (transaction == 0) {
                 employees[index].printEmployeeDetails();  
             } else {
                 System.out.println("Work in progress");
