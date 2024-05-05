@@ -16,17 +16,19 @@ public class LoginEmployee {
     
     public void logInMessage(){
         System.out.println("================================");
+        System.out.println("    MotorPH Payroll System      ");
+        System.out.println("================================");
     }
     public String getLastName(){
         Scanner input = new Scanner(System.in);
         System.out.println("Last Name: ");
-        lastname = input.nextLine();
+        lastname = input.next();
         return lastname;
     }
     public String getPassword(){
         Scanner input = new Scanner(System.in);
         System.out.println("Password: ");
-        password = input.nextLine();
+        password = input.next();
         return password;
     }
     
@@ -38,6 +40,8 @@ public class LoginEmployee {
             return false;
         }
     }
+    
+    
     
     
 }

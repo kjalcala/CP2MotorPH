@@ -59,7 +59,13 @@ public class EmployeeDetails {
         int index = getEmployeeDetails();
         
         if (index >= 0 && index < employees.length) {
-            employees[index].printEmployeeDetails();
+            if (chooseTransaction() == 1) {
+                employees[index].printEmployeeDetails();  
+            } else if (chooseTransaction() == 2) {
+                System.out.println("2");
+            }
+            
+            
         } else {
             System.out.println("Invalid index.");
         }
@@ -67,12 +73,24 @@ public class EmployeeDetails {
         return employees;
 
     }
-
+        public static int chooseTransaction(){
+            System.out.println("Choose Transaction(Number only): ");
+            System.out.println("1 - View Employee Details");
+            System.out.println("2 - View Payslip");
+            Scanner scanner = new Scanner(System.in);
+            int transaction = scanner.nextInt();
+            if (transaction == 1){
+                return 1;
+            } else if (transaction == 2){
+                return 2;
+            } else{
+                return 0;
+            }
+        }
         public static int getEmployeeDetails(){
             Scanner scanner = new Scanner(System.in);
-            System.out.print("Enter the index of the employee: ");
+            System.out.print("Enter the Employee Number: ");
             int index = scanner.nextInt();
-            scanner.close();
             return index;
             }
 }

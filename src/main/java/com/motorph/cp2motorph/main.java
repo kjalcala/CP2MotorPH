@@ -13,6 +13,7 @@ public class main {
 
     public static void main(String[] args) {
         LoginEmployee login = new LoginEmployee();
+        login.logInMessage();
         if (login.verifylogin(login.getLastName(), login.getPassword()) == true){
             EmployeeDetails deets = new EmployeeDetails();
             System.out.println(deets.getEmployees());

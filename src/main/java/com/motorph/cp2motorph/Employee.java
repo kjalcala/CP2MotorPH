@@ -53,9 +53,14 @@ public class Employee {
     }
     
     public String printEmployeeDetails(){
-        System.out.println("=======================");
-        System.out.println("Employee name:" + lastName + ", " + firstName);
-        System.out.println("=======================");
+        System.out.println("====================================");
+        System.out.println("Employee name: " + lastName + ", " + firstName);
+        System.out.println("Position: " + position);
+        System.out.println("Status: " + status);
+        System.out.println("Birthday: " + birthday);
+        System.out.println("Address: " + address);
+        System.out.println("Phone Number: " + phoneNumber);
+        System.out.println("====================================");
         return this.lastName;
     }
 }
