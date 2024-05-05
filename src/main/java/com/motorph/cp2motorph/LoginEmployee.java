@@ -33,8 +33,10 @@ public class LoginEmployee {
     }
     
     public boolean verifylogin(String lastname, String password) { 
-        if (lastname.equals("Garcia") && password.equals("password")){
+        EmployeeDetails lastnamecheck = new EmployeeDetails();    
+        if (lastnamecheck.getFirstNameArrayLogin(lastname) && password.equals("password")){
             System.out.println("login successful");
+            System.out.println("================================");
             return true;
         } else {
             return false;

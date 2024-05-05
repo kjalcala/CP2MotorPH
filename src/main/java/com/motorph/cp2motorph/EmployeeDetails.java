@@ -56,13 +56,13 @@ public class EmployeeDetails {
         employees[32] = new Employee( 33,"(Martinez)", "(Carlos Ian  ) ", "(11/16/1990)", " (Bulala, Camalaniugan)", "(078-854-208 )", "(11-5062972-7)", "(380685387212)", "(256-436-296-000)", "(993372963726)", "(Regular)", "(Supply Chain and Logistics)", "(Reyes, Isabella)","", 52670, 1500.0, 1000.0, 1000.0, 26335.0, 313.51);
         employees[33] = new Employee( 34,"(Santos)", "(Beatriz ) ", "(08/07/1990)", " (Agapita Building, Metro Manila)", "(526-639-511)", "(20-2987501-5)", "(918460050077)", "(911-529-713-000)", "(874042259378)", "(Regular)", "(Customer Service and Relations)", "(Reyes, Isabella)", "", 52670, 1500.0, 1000.0, 1000.0, 26335.0, 313.51);
         
-        int index = getEmployeeDetails();
-        
+        int index = getEmployeeNumber();
+        int transaction = chooseTransaction();
         if (index >= 0 && index < employees.length) {
-            if (chooseTransaction() == 1) {
+            if (transaction == 1) {
                 employees[index].printEmployeeDetails();  
-            } else if (chooseTransaction() == 2) {
-                System.out.println("2");
+            } else {
+                System.out.println("Work in progress");
             }
             
             
@@ -75,22 +75,70 @@ public class EmployeeDetails {
     }
         public static int chooseTransaction(){
             System.out.println("Choose Transaction(Number only): ");
-            System.out.println("1 - View Employee Details");
-            System.out.println("2 - View Payslip");
+            System.out.println("0 - View Employee Details");
+            System.out.println("1 - View Payslip");
             Scanner scanner = new Scanner(System.in);
             int transaction = scanner.nextInt();
-            if (transaction == 1){
-                return 1;
-            } else if (transaction == 2){
-                return 2;
-            } else{
+            if (transaction == 0){
                 return 0;
+            } else if (transaction == 1){
+                return 1;
+            } else{
+                chooseTransaction();
+                return 2;  
             }
         }
-        public static int getEmployeeDetails(){
+        public static int getEmployeeNumber(){
             Scanner scanner = new Scanner(System.in);
             System.out.print("Enter the Employee Number: ");
             int index = scanner.nextInt();
             return index;
             }
+        
+        
+        public boolean getFirstNameArrayLogin(String lastNameLogin){
+            String[] lastName = new String[34];
+            lastName[0] = "Garcia";
+            lastName[1] = "Lim";
+            lastName[2] = "Aquino";
+            lastName[3] = "Reyes";
+            lastName[4] = "Hernandez";
+            lastName[5] = "Villanueva";
+            lastName[6] = "San Jose";
+            lastName[7] = "Romualdez";
+            lastName[8] = "Atienza";
+            lastName[9] = "Alvaro";
+            lastName[10] = "Salcedo";
+            lastName[11] = "Lopez";
+            lastName[12] = "Farala";
+            lastName[13] = "Martinez";
+            lastName[14] = "Romualdez";
+            lastName[15] = "Mata";
+            lastName[16] = "De Leon";
+            lastName[17] = "San Jose";
+            lastName[18] = "Rosario";
+            lastName[19] = "Bautista";
+            lastName[20] = "Lazaro";
+            lastName[21] = "Delos Santos";
+            lastName[22] = "Santos";
+            lastName[23] = "Del Rosario";
+            lastName[24] = "Tolentino";
+            lastName[25] = "Gutierrez";
+            lastName[26] = "Manalaysay";
+            lastName[27] = "Villegas";
+            lastName[27] = "Ramos";
+            lastName[28] = "Maceda";
+            lastName[30] = "Aguilar";
+            lastName[31] = "Castro";
+            lastName[32] = "Martinez";
+            lastName[33] = "Santos";
+            int i = 0;
+            while (i <= 33) {
+                if (lastName[i].equals(lastNameLogin)){
+                return true;               
+                } 
+                i++;
+            }
+            return false;
+        }
 }

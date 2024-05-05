@@ -52,7 +52,7 @@ public class Employee {
         this.hourlyRate = hourlyRate;
     }
     
-    public String printEmployeeDetails(){
+    public void printEmployeeDetails(){
         System.out.println("====================================");
         System.out.println("Employee name: " + lastName + ", " + firstName);
         System.out.println("Position: " + position);
@@ -61,6 +61,8 @@ public class Employee {
         System.out.println("Address: " + address);
         System.out.println("Phone Number: " + phoneNumber);
         System.out.println("====================================");
+    }
+    public String getLastName(){
         return this.lastName;
     }
 }
