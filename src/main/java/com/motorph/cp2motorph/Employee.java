@@ -10,7 +10,7 @@ package com.motorph.cp2motorph;
  */
 public class Employee {
     private int employeeNumber;
-    private final String lastName;
+    private String lastName;
     private final String firstName;
     private String birthday;
     private String address;
@@ -62,7 +62,15 @@ public class Employee {
         System.out.println("Phone Number: " + phoneNumber);
         System.out.println("====================================");
     }
+    
     public String getLastName(){
-        return this.lastName;
+        return lastName;
+    }
+    
+    public String getFirstName() {
+        return firstName;
+    }
+    public void setLastName() {
+        lastName = getLastName();
     }
 }
