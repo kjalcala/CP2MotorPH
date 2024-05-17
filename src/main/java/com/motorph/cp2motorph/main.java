@@ -4,14 +4,13 @@
 
 package com.motorph.cp2motorph;
 
-/**
- *
- * @author kjalcala
- */
-public class main {
 
+public class main {
+public static String loggedOnUser;
+    
     public static void main(String[] args) {
         login lgn = new login();
         lgn.show();
+        loggedOnUser = lgn.getLoggedOnUser();
     }
 }

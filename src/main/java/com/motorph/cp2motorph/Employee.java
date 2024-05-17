@@ -52,16 +52,6 @@ public class Employee {
         this.hourlyRate = hourlyRate;
     }
     
-    public void printEmployeeDetails(){
-        System.out.println("====================================");
-        System.out.println("Employee name: " + lastName + ", " + firstName);
-        System.out.println("Position: " + position);
-        System.out.println("Status: " + status);
-        System.out.println("Birthday: " + birthday);
-        System.out.println("Address: " + address);
-        System.out.println("Phone Number: " + phoneNumber);
-        System.out.println("====================================");
-    }
     
     public String getLastName(){
         return lastName;
@@ -72,5 +62,12 @@ public class Employee {
     }
     public void setLastName() {
         lastName = getLastName();
+    }
+    
+    public String getBirthday() {
+        return birthday;
+    }
+    public int getEmployeeNumber() {
+        return employeeNumber;
     }
 }

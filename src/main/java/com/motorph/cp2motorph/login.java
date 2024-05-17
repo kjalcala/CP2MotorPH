@@ -16,6 +16,7 @@ public class login extends javax.swing.JFrame {
      * Creates new form login
      */
     public String loggedOnUser;
+    public int employeeNumber;
     public login() {
         initComponents();
     }
@@ -196,17 +197,32 @@ public class login extends javax.swing.JFrame {
         return lastNameFieldText.getText();
     }
     
+    public int getEmployeeNumber(){
+        return employeeNumber;
+    }
+    
+    
     public boolean verifyLogin() {
         EmployeeDetails empDet = new EmployeeDetails();
         Employee[] employees = empDet.getEmployees();
         for (Employee employee : employees) {
             if (employee.getLastName().equals(getUserInputLastName()) && getUserInputPassword().equals("password")) {
+              
                 System.out.println("working");
+                employeeNumber = employee.getEmployeeNumber();
+                MotorPH mph = new MotorPH();
+                mph.fillInformation();
+                mph.show();
+                dispose();
                 loggedOnUser = setLoggedOnUser();
                 break; 
             }
         }
         return true;
+    }
+    
+    public String getLoggedOnUser() {
+        return loggedOnUser;
     }
     
     
