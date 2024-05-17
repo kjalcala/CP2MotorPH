@@ -84,12 +84,10 @@ public class MotorPH extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
         payslipBasicPayLbl = new javax.swing.JLabel();
         payslipRiceAllowanceLbl = new javax.swing.JLabel();
         payslipPhoneAllowanceLbl = new javax.swing.JLabel();
         payslipClothingAllowanceLbl = new javax.swing.JLabel();
-        payslipTGELbl = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -613,10 +611,6 @@ public class MotorPH extends javax.swing.JFrame {
         jLabel24.setForeground(new java.awt.Color(102, 102, 102));
         jLabel24.setText("Clothing Allowance:");
 
-        jLabel25.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel25.setText("Total Gross Earnings:");
-
         payslipBasicPayLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         payslipBasicPayLbl.setForeground(new java.awt.Color(102, 102, 102));
         payslipBasicPayLbl.setText("Basic Pay Placeholder");
@@ -632,10 +626,6 @@ public class MotorPH extends javax.swing.JFrame {
         payslipClothingAllowanceLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         payslipClothingAllowanceLbl.setForeground(new java.awt.Color(102, 102, 102));
         payslipClothingAllowanceLbl.setText("Clothing Allowance Placeholder");
-
-        payslipTGELbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        payslipTGELbl.setForeground(new java.awt.Color(102, 102, 102));
-        payslipTGELbl.setText("TGE Placeholder");
 
         jLabel21.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(102, 102, 102));
@@ -713,11 +703,7 @@ public class MotorPH extends javax.swing.JFrame {
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(payslipClothingAllowanceLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(payslipTGELbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(payslipClothingAllowanceLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
@@ -777,11 +763,7 @@ public class MotorPH extends javax.swing.JFrame {
                     .addComponent(payslipClothingAllowanceLbl)
                     .addComponent(jLabel28)
                     .addComponent(payslipWithholdingTaxLbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(payslipTGELbl))
-                .addGap(28, 28, 28)
+                .addGap(50, 50, 50)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
                     .addComponent(PayslipTotalDeductionLbl))
@@ -1239,7 +1221,6 @@ public class MotorPH extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
@@ -1300,7 +1281,6 @@ public class MotorPH extends javax.swing.JFrame {
     private javax.swing.JLabel payslipPhoneAllowanceLbl;
     private javax.swing.JLabel payslipRiceAllowanceLbl;
     private javax.swing.JLabel payslipSssLbl;
-    private javax.swing.JLabel payslipTGELbl;
     private javax.swing.JLabel payslipTotalNetEarningsLbl;
     private javax.swing.JLabel payslipWithholdingTaxLbl;
     private javax.swing.JTextArea profileAddressTxtArea;
