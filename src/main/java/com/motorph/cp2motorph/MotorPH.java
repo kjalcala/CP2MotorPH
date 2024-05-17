@@ -14,6 +14,7 @@ public class MotorPH extends javax.swing.JFrame {
      * Creates new form MotorPH
      */
     public int employeeNumber;
+    public int payrollEmployeeNumber;
     public MotorPH() {
         initComponents();
     }
@@ -103,6 +104,33 @@ public class MotorPH extends javax.swing.JFrame {
         payslipTotalNetEarningsLbl = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
+        jPanel13 = new javax.swing.JPanel();
+        payroll = new javax.swing.JLabel();
+        payrollEmployeeNumberTextField = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        payrollBasicPayLbl = new javax.swing.JLabel();
+        payrollRiceAllowanceLbl = new javax.swing.JLabel();
+        payrollPhoneAllowanceLbl = new javax.swing.JLabel();
+        payrollClothingAllowanceLbl = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        payrollSssLbl = new javax.swing.JLabel();
+        payrollPhilhealthLbl = new javax.swing.JLabel();
+        payrollPagibigLbl = new javax.swing.JLabel();
+        payrollWithholdingTaxLbl = new javax.swing.JLabel();
+        PayrollTotalDeductionLbl = new javax.swing.JLabel();
+        payrollTotalNetEarningsLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
@@ -804,15 +832,251 @@ public class MotorPH extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(235, 235, 255));
 
+        jPanel13.setBackground(new java.awt.Color(255, 255, 255));
+
+        payroll.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        payroll.setForeground(new java.awt.Color(102, 102, 102));
+        payroll.setText("Enter Employee Number:");
+
+        payrollEmployeeNumberTextField.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        payrollEmployeeNumberTextField.setForeground(new java.awt.Color(102, 102, 102));
+        payrollEmployeeNumberTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jButton1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 153, 204));
+        jButton1.setText("SUBMIT");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(payroll, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(payrollEmployeeNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(payroll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(payrollEmployeeNumberTextField)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+
+        jPanel14.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel32.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(0, 153, 255));
+        jLabel32.setText("Earnings");
+
+        jLabel33.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(0, 153, 255));
+        jLabel33.setText("Deductions");
+
+        jLabel34.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel34.setText("Basic Pay:");
+
+        jLabel35.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel35.setText("Rice Allowance:");
+
+        jLabel36.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel36.setText("Phone Allowance:");
+
+        jLabel37.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel37.setText("Clothing Allowance:");
+
+        payrollBasicPayLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        payrollBasicPayLbl.setForeground(new java.awt.Color(102, 102, 102));
+        payrollBasicPayLbl.setText("Basic Pay Placeholder");
+
+        payrollRiceAllowanceLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        payrollRiceAllowanceLbl.setForeground(new java.awt.Color(102, 102, 102));
+        payrollRiceAllowanceLbl.setText("Rice Allowance Placeholder");
+
+        payrollPhoneAllowanceLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        payrollPhoneAllowanceLbl.setForeground(new java.awt.Color(102, 102, 102));
+        payrollPhoneAllowanceLbl.setText("Phone Allowance Placeholder");
+
+        payrollClothingAllowanceLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        payrollClothingAllowanceLbl.setForeground(new java.awt.Color(102, 102, 102));
+        payrollClothingAllowanceLbl.setText("Clothing Allowance Placeholder");
+
+        jLabel38.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel38.setText("SSS:");
+
+        jLabel39.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel39.setText("PhilHealth:");
+
+        jLabel40.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel40.setText("Pagibig:");
+
+        jLabel41.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel41.setText("Witholding Tax:");
+
+        jLabel42.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel42.setText("Total Deduction:");
+
+        jLabel43.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel43.setText("Total Net Earnings:");
+
+        payrollSssLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        payrollSssLbl.setForeground(new java.awt.Color(102, 102, 102));
+        payrollSssLbl.setText("SSS placeholder");
+
+        payrollPhilhealthLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        payrollPhilhealthLbl.setForeground(new java.awt.Color(102, 102, 102));
+        payrollPhilhealthLbl.setText("Philhealth placeholder");
+
+        payrollPagibigLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        payrollPagibigLbl.setForeground(new java.awt.Color(102, 102, 102));
+        payrollPagibigLbl.setText("Pagibig placeholder");
+
+        payrollWithholdingTaxLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        payrollWithholdingTaxLbl.setForeground(new java.awt.Color(102, 102, 102));
+        payrollWithholdingTaxLbl.setText("Witholding tax placeholder");
+
+        PayrollTotalDeductionLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        PayrollTotalDeductionLbl.setForeground(new java.awt.Color(102, 102, 102));
+        PayrollTotalDeductionLbl.setText("Total Deduction placeholder");
+
+        payrollTotalNetEarningsLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        payrollTotalNetEarningsLbl.setForeground(new java.awt.Color(102, 102, 102));
+        payrollTotalNetEarningsLbl.setText("Total Net Earning placeholder");
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(171, 171, 171)
+                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel14Layout.createSequentialGroup()
+                                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(payrollClothingAllowanceLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel14Layout.createSequentialGroup()
+                                    .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(payrollPhoneAllowanceLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(payrollRiceAllowanceLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(payrollBasicPayLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(240, 240, 240)
+                                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(payrollPhilhealthLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(payrollSssLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(payrollPagibigLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(payrollWithholdingTaxLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PayrollTotalDeductionLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(payrollTotalNetEarningsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(196, Short.MAX_VALUE))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(payrollBasicPayLbl)
+                    .addComponent(jLabel38)
+                    .addComponent(payrollSssLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(payrollRiceAllowanceLbl)
+                    .addComponent(jLabel39)
+                    .addComponent(payrollPhilhealthLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(payrollPhoneAllowanceLbl)
+                    .addComponent(jLabel40)
+                    .addComponent(payrollPagibigLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(payrollClothingAllowanceLbl)
+                    .addComponent(jLabel41)
+                    .addComponent(payrollWithholdingTaxLbl))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel42)
+                    .addComponent(PayrollTotalDeductionLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43)
+                    .addComponent(payrollTotalNetEarningsLbl))
+                .addContainerGap(158, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1256, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Payroll", jPanel7);
@@ -856,6 +1120,31 @@ public class MotorPH extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        payrollEmployeeNumber = Integer.parseInt(payrollEmployeeNumberTextField.getText());
+        EmployeeDetails empDet = new EmployeeDetails();
+        Employee[] employees = empDet.getEmployees();
+        
+        if (payrollEmployeeNumber < 1 || payrollEmployeeNumber > employees.length) {
+            throw new IndexOutOfBoundsException("Employee number is out of range");
+        }
+        
+        Employee employee = employees[payrollEmployeeNumber - 1];
+        
+        payrollPhilhealthLbl.setText(String.valueOf(philhealthComputation.philhealthComputation(employee.getBasicSalary())));
+        payrollPagibigLbl.setText(String.valueOf(PagibigComputation.pagibigComputation(employee.getBasicSalary())));
+        payrollSssLbl.setText(String.valueOf(SssComputation.sssComputation(employee.getBasicSalary())));
+        Double totalDeduction = (philhealthComputation.philhealthComputation(employee.getBasicSalary())) + (SssComputation.sssComputation(employee.getBasicSalary())) + (PagibigComputation.pagibigComputation(employee.getBasicSalary()));
+        payrollWithholdingTaxLbl.setText(String.valueOf(taxComputation.taxComputation(employee.getBasicSalary(), totalDeduction)));
+        payrollBasicPayLbl.setText(String.valueOf(employee.getBasicSalary()));
+        payrollClothingAllowanceLbl.setText(String.valueOf(employee.getClothingAllowance()));
+        payrollRiceAllowanceLbl.setText(String.valueOf(employee.getRiceSubsidy()));
+        payrollPhoneAllowanceLbl.setText(String.valueOf(employee.getPhoneAllowance()));
+        Double totalDeductionWithTax = totalDeduction + taxComputation.taxComputation(employee.getBasicSalary(), totalDeduction);
+        PayrollTotalDeductionLbl.setText(String.valueOf(totalDeductionWithTax));
+        payrollTotalNetEarningsLbl.setText(String.valueOf(employee.getBasicSalary()- totalDeduction));
+    }//GEN-LAST:event_jButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -883,11 +1172,18 @@ public class MotorPH extends javax.swing.JFrame {
         profilePhilhealthLbl.setText(employee.getPhilhealthNumber());
         profileTinLbl.setText(employee.getTinNumber());
         
+        payslipBasicPayLbl.setText(String.valueOf(employee.getBasicSalary()));
+        payslipClothingAllowanceLbl.setText(String.valueOf(employee.getClothingAllowance()));
+        payslipRiceAllowanceLbl.setText(String.valueOf(employee.getRiceSubsidy()));
+        payslipPhoneAllowanceLbl.setText(String.valueOf(employee.getPhoneAllowance()));
         payslipPhilhealthLbl.setText(String.valueOf(philhealthComputation.philhealthComputation(employee.getBasicSalary())));
         payslipPagibigLbl.setText(String.valueOf(PagibigComputation.pagibigComputation(employee.getBasicSalary())));
         payslipSssLbl.setText(String.valueOf(SssComputation.sssComputation(employee.getBasicSalary())));
-        Double totalDeduction = (philhealthComputation.philhealthComputation(employee.getBasicSalary())) - (SssComputation.sssComputation(employee.getBasicSalary())) - (PagibigComputation.pagibigComputation(employee.getBasicSalary()));
+        Double totalDeduction = (philhealthComputation.philhealthComputation(employee.getBasicSalary())) + (SssComputation.sssComputation(employee.getBasicSalary())) + (PagibigComputation.pagibigComputation(employee.getBasicSalary()));
         payslipWithholdingTaxLbl.setText(String.valueOf(taxComputation.taxComputation(employee.getBasicSalary(), totalDeduction)));
+        Double totalDeductionWithTax = totalDeduction + taxComputation.taxComputation(employee.getBasicSalary(), totalDeduction);
+        PayslipTotalDeductionLbl.setText(String.valueOf(totalDeductionWithTax));
+        payslipTotalNetEarningsLbl.setText(String.valueOf(employee.getBasicSalary()- totalDeduction));
     }
     
     public static void main(String args[]) {
@@ -923,7 +1219,9 @@ public class MotorPH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel PayrollTotalDeductionLbl;
     private javax.swing.JLabel PayslipTotalDeductionLbl;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -948,7 +1246,19 @@ public class MotorPH extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -958,6 +1268,8 @@ public class MotorPH extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -970,6 +1282,17 @@ public class MotorPH extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel payroll;
+    private javax.swing.JLabel payrollBasicPayLbl;
+    private javax.swing.JLabel payrollClothingAllowanceLbl;
+    private javax.swing.JTextField payrollEmployeeNumberTextField;
+    private javax.swing.JLabel payrollPagibigLbl;
+    private javax.swing.JLabel payrollPhilhealthLbl;
+    private javax.swing.JLabel payrollPhoneAllowanceLbl;
+    private javax.swing.JLabel payrollRiceAllowanceLbl;
+    private javax.swing.JLabel payrollSssLbl;
+    private javax.swing.JLabel payrollTotalNetEarningsLbl;
+    private javax.swing.JLabel payrollWithholdingTaxLbl;
     private javax.swing.JLabel payslipBasicPayLbl;
     private javax.swing.JLabel payslipClothingAllowanceLbl;
     private javax.swing.JLabel payslipPagibigLbl;
