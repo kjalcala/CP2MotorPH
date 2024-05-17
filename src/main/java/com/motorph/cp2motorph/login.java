@@ -197,8 +197,9 @@ public class login extends javax.swing.JFrame {
         return lastNameFieldText.getText();
     }
     
-    public int getEmployeeNumber(){
-        return employeeNumber;
+    
+     public void setEmployeeNumber(int employeeNumber){
+        this.employeeNumber = employeeNumber;
     }
     
     
@@ -207,13 +208,14 @@ public class login extends javax.swing.JFrame {
         Employee[] employees = empDet.getEmployees();
         for (Employee employee : employees) {
             if (employee.getLastName().equals(getUserInputLastName()) && getUserInputPassword().equals("password")) {
-              
-                System.out.println("working");
-                employeeNumber = employee.getEmployeeNumber();
                 MotorPH mph = new MotorPH();
+                System.out.println("working");
+                mph.employeeNumber = employee.getEmployeeNumber();
+                setEmployeeNumber(employee.getEmployeeNumber());
+                
                 mph.fillInformation();
                 mph.show();
-                dispose();
+             
                 loggedOnUser = setLoggedOnUser();
                 break; 
             }

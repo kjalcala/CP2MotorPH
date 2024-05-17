@@ -1,5 +1,5 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/FileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.motorph.cp2motorph;
@@ -69,5 +69,50 @@ public class Employee {
     }
     public int getEmployeeNumber() {
         return employeeNumber;
+    }
+    public String getAddress() {
+        return address;
+    }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+    public String getSssNumber() {
+        return sssNumber;
+    }
+    public String getPhilhealthNumber() {
+        return philhealthNumber;
+    }
+    public String getTinNumber() {
+        return tinNumber;
+    }
+    public String getPagibigNumber() {
+        return pagibigNumber;
+    }
+    public String getStatus() {
+        return status;
+    }
+    public String getPosition() {
+        return position;
+    }
+    public String getImmediateSupervisor() {
+        return immediateSupervisor;
+    }
+    public Double getBasicSalary() {
+        return basicSalary;
+    }
+    public Double getRiceSubsidy() {
+        return riceSubsidy;
+    }
+    public Double getPhoneAllowance() {
+        return phoneAllowance;
+    }
+    public Double getClothingAllowance() {
+        return clothingAllowance;
+    }
+    public Double getGrossSemiMonthlyRate() {
+        return grossSemiMonthlyRate;
+    }
+    public Double getHourlyRate() {
+        return hourlyRate;
     }
 }

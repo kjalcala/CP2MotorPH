@@ -13,6 +13,7 @@ public class MotorPH extends javax.swing.JFrame {
     /**
      * Creates new form MotorPH
      */
+    public int employeeNumber;
     public MotorPH() {
         initComponents();
     }
@@ -32,10 +33,10 @@ public class MotorPH extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         profilePanel = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        profileFullNameLbl = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        profilePositionLbl = new javax.swing.JLabel();
+        profileEmployeeNumberLbl = new javax.swing.JLabel();
         profilePersonalInformationPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -48,13 +49,31 @@ public class MotorPH extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         profileBirthdayLbl = new javax.swing.JLabel();
         profileContactNoLbl = new javax.swing.JLabel();
-        profileAddressLbl = new javax.swing.JLabel();
+        profileAddressTxtArea = new javax.swing.JTextArea();
         jPanel10 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        profileBasicSalaryLbl = new javax.swing.JLabel();
+        profileHourlyRateLbl = new javax.swing.JLabel();
+        profileRiceSubsidyLbl = new javax.swing.JLabel();
+        profilePhoneSubsidyLbl = new javax.swing.JLabel();
+        profileClothingLbl = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        profileSssLbl = new javax.swing.JLabel();
+        profilePagibigLbl = new javax.swing.JLabel();
+        profilePhilhealthLbl = new javax.swing.JLabel();
+        profileTinLbl = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -100,9 +119,9 @@ public class MotorPH extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("Full Name Placeholder");
+        profileFullNameLbl.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        profileFullNameLbl.setForeground(new java.awt.Color(51, 51, 51));
+        profileFullNameLbl.setText("Full Name Placeholder");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -115,13 +134,13 @@ public class MotorPH extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel2.setText("Position Placeholder");
+        profilePositionLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        profilePositionLbl.setForeground(new java.awt.Color(51, 51, 51));
+        profilePositionLbl.setText("Position Placeholder");
 
-        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setText("Employee ID Placeholder");
+        profileEmployeeNumberLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        profileEmployeeNumberLbl.setForeground(new java.awt.Color(51, 51, 51));
+        profileEmployeeNumberLbl.setText("Employee ID Placeholder");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -132,9 +151,9 @@ public class MotorPH extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(profileFullNameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(profilePositionLbl)
+                    .addComponent(profileEmployeeNumberLbl))
                 .addContainerGap(661, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -145,11 +164,11 @@ public class MotorPH extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabel1)
+                .addComponent(profileFullNameLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(profilePositionLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
+                .addComponent(profileEmployeeNumberLbl)
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -192,8 +211,15 @@ public class MotorPH extends javax.swing.JFrame {
         profileContactNoLbl.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         profileContactNoLbl.setText("Contact No. Placeholder");
 
-        profileAddressLbl.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        profileAddressLbl.setText("Address Placeholder");
+        profileAddressTxtArea.setEditable(false);
+        profileAddressTxtArea.setBackground(new java.awt.Color(255, 255, 255));
+        profileAddressTxtArea.setColumns(20);
+        profileAddressTxtArea.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        profileAddressTxtArea.setRows(5);
+        profileAddressTxtArea.setWrapStyleWord(true);
+        profileAddressTxtArea.setBorder(null);
+        profileAddressTxtArea.setCaretColor(new java.awt.Color(255, 255, 255));
+        profileAddressTxtArea.setDisabledTextColor(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout profilePersonalInformationPanelLayout = new javax.swing.GroupLayout(profilePersonalInformationPanel);
         profilePersonalInformationPanel.setLayout(profilePersonalInformationPanelLayout);
@@ -206,7 +232,6 @@ public class MotorPH extends javax.swing.JFrame {
             .addGroup(profilePersonalInformationPanelLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(profilePersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(profilePersonalInformationPanelLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addGroup(profilePersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,17 +244,16 @@ public class MotorPH extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(profileFirstNameLbl))
                             .addGroup(profilePersonalInformationPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(profilePersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(profileBirthdayLbl))
-                            .addGroup(profilePersonalInformationPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(profileContactNoLbl))
-                            .addGroup(profilePersonalInformationPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(profileAddressLbl)))))
+                                .addGroup(profilePersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(profileBirthdayLbl)
+                                    .addComponent(profileContactNoLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(profileAddressTxtArea, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)))))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         profilePersonalInformationPanelLayout.setVerticalGroup(
@@ -243,23 +267,23 @@ public class MotorPH extends javax.swing.JFrame {
                 .addGroup(profilePersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(profileFirstNameLbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(profilePersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(profilePersonalInformationLastNameLbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addGroup(profilePersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(profilePersonalInformationLastNameLbl)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
                 .addGroup(profilePersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(profileBirthdayLbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(profilePersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(profileContactNoLbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(profilePersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(profileAddressLbl))
-                .addContainerGap(181, Short.MAX_VALUE))
+                    .addComponent(profileAddressTxtArea, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -268,6 +292,41 @@ public class MotorPH extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Salary Information");
+
+        jLabel10.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel10.setText("Basic Salary:");
+
+        jLabel13.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel13.setText("Hourly Rate:");
+
+        jLabel14.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel14.setText("Rice Subsidy:");
+
+        jLabel15.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel15.setText("Phone Subsidy:");
+
+        jLabel16.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel16.setText("Clothing:");
+
+        profileBasicSalaryLbl.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        profileBasicSalaryLbl.setText("Basic Placeholder");
+
+        profileHourlyRateLbl.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        profileHourlyRateLbl.setText("Hourly Rate Placeholder");
+
+        profileRiceSubsidyLbl.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        profileRiceSubsidyLbl.setText("Rice Placeholder");
+
+        profilePhoneSubsidyLbl.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        profilePhoneSubsidyLbl.setText("Phone Placeholder");
+
+        profileClothingLbl.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        profileClothingLbl.setText("Clothing Placeholder");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -279,7 +338,28 @@ public class MotorPH extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(profileClothingLbl))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(profilePhoneSubsidyLbl))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(profileRiceSubsidyLbl))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(profileHourlyRateLbl))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(profileBasicSalaryLbl))
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
         );
         jPanel10Layout.setVerticalGroup(
@@ -289,6 +369,26 @@ public class MotorPH extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(profileBasicSalaryLbl))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(profileHourlyRateLbl))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(profileRiceSubsidyLbl))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(profilePhoneSubsidyLbl))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(profileClothingLbl))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -299,6 +399,34 @@ public class MotorPH extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Deductions");
 
+        jLabel17.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel17.setText("SSS:");
+
+        jLabel18.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel18.setText("Pagibig:");
+
+        jLabel19.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel19.setText("PhilHealth:");
+
+        jLabel20.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel20.setText("Tin:");
+
+        profileSssLbl.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        profileSssLbl.setText("SSS Placeholder");
+
+        profilePagibigLbl.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        profilePagibigLbl.setText("Pagibig Placeholder");
+
+        profilePhilhealthLbl.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        profilePhilhealthLbl.setText("Philhealth Placeholder");
+
+        profileTinLbl.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        profileTinLbl.setText("Tin Placeholder");
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
@@ -308,8 +436,29 @@ public class MotorPH extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(7, 7, 7))
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(profilePagibigLbl))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(profileSssLbl))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(profilePhilhealthLbl))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(profileTinLbl)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
@@ -319,6 +468,22 @@ public class MotorPH extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(profileSssLbl))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(profilePagibigLbl))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(profilePhilhealthLbl))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(profileTinLbl))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -441,12 +606,28 @@ public class MotorPH extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public void fillInformation() {
-        login lgn = new login();
+        
+        login lgn1 = new login();
         EmployeeDetails empDet = new EmployeeDetails();
         Employee[] employees = empDet.getEmployees();
-        Employee employee = employees[lgn.employeeNumber];
+        Employee employee = employees[employeeNumber - 1];
+        profileFullNameLbl.setText(employee.getLastName() + ", " + employee.getFirstName());
+        profilePositionLbl.setText(employee.getPosition());
+        profileEmployeeNumberLbl.setText("Employee Number: " +String.valueOf(employee.getEmployeeNumber()));
         profilePersonalInformationLastNameLbl.setText(employee.getLastName());
         profileFirstNameLbl.setText(employee.getFirstName());
+        profileBirthdayLbl.setText(employee.getBirthday());
+        profileContactNoLbl.setText(employee.getPhoneNumber());
+        profileAddressTxtArea.setText(employee.getAddress());
+        profileBasicSalaryLbl.setText(String.valueOf(employee.getBasicSalary()));
+        profileHourlyRateLbl.setText(String.valueOf(employee.getHourlyRate()));
+        profileRiceSubsidyLbl.setText(String.valueOf(employee.getRiceSubsidy()));
+        profilePhoneSubsidyLbl.setText(String.valueOf(employee.getPhoneAllowance()));
+        profileClothingLbl.setText(String.valueOf(employee.getClothingAllowance()));
+        profileSssLbl.setText(employee.getSssNumber());
+        profilePagibigLbl.setText(employee.getPagibigNumber());
+        profilePhilhealthLbl.setText(employee.getPhilhealthNumber());
+        profileTinLbl.setText(employee.getTinNumber());
     }
     
     public static void main(String args[]) {
@@ -482,11 +663,17 @@ public class MotorPH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -507,12 +694,24 @@ public class MotorPH extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JLabel profileAddressLbl;
+    private javax.swing.JTextArea profileAddressTxtArea;
+    private javax.swing.JLabel profileBasicSalaryLbl;
     private javax.swing.JLabel profileBirthdayLbl;
+    private javax.swing.JLabel profileClothingLbl;
     private javax.swing.JLabel profileContactNoLbl;
+    private javax.swing.JLabel profileEmployeeNumberLbl;
     private javax.swing.JLabel profileFirstNameLbl;
+    private javax.swing.JLabel profileFullNameLbl;
+    private javax.swing.JLabel profileHourlyRateLbl;
+    private javax.swing.JLabel profilePagibigLbl;
     private javax.swing.JPanel profilePanel;
     private javax.swing.JLabel profilePersonalInformationLastNameLbl;
     private javax.swing.JPanel profilePersonalInformationPanel;
+    private javax.swing.JLabel profilePhilhealthLbl;
+    private javax.swing.JLabel profilePhoneSubsidyLbl;
+    private javax.swing.JLabel profilePositionLbl;
+    private javax.swing.JLabel profileRiceSubsidyLbl;
+    private javax.swing.JLabel profileSssLbl;
+    private javax.swing.JLabel profileTinLbl;
     // End of variables declaration//GEN-END:variables
 }
