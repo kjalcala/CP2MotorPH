@@ -4,6 +4,12 @@
  */
 package com.motorph.cp2motorph;
 
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvException;
+import com.opencsv.exceptions.CsvValidationException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.transaction.xa.Xid;
 
 /**
@@ -179,7 +185,15 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_lastNameFieldTextActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        verifyLogin();
+        try {
+            dataReader();
+        } catch(CsvException e){
+            
+        }
+        LoggedOnUser LOU = new LoggedOnUser();
+        System.out.println("This is employee number" + employeeNumber);
+        LOU.setUserInfo(employeeNumber);
+        
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
@@ -200,27 +214,35 @@ public class login extends javax.swing.JFrame {
     
      public void setEmployeeNumber(int employeeNumber){
         this.employeeNumber = employeeNumber;
+         System.out.println("set employee method employeevariable=:" + employeeNumber);
+    }
+     
+    public int getEmployeeNumber(){
+        return employeeNumber;
     }
     
     
-    public boolean verifyLogin() {
-        EmployeeDetails empDet = new EmployeeDetails();
-        Employee[] employees = empDet.getEmployees();
-        for (Employee employee : employees) {
-            if (employee.getLastName().equals(getUserInputLastName()) && getUserInputPassword().equals("password")) {
-                MotorPH mph = new MotorPH();
-                System.out.println("working");
-                mph.employeeNumber = employee.getEmployeeNumber();
-                setEmployeeNumber(employee.getEmployeeNumber());
-                
-                mph.fillInformation();
-                mph.show();
-             
-                loggedOnUser = setLoggedOnUser();
-                break; 
+    
+    public void dataReader() throws CsvValidationException {
+        
+        try (CSVReader reader1 = new CSVReader(new FileReader("src\\employee_data.csv"))) {
+            String[] info;
+            while ((info = reader1.readNext()) != null) {
+                // Assuming the first column contains usernames
+                String username = info[1].trim(); // Trim to remove leading/trailing spaces
+                if (username.equalsIgnoreCase(getUserInputLastName())) {
+                    System.out.println("login working");
+                    setEmployeeNumber(Integer.parseInt(info[0]));
+                    dispose();
+                    return; // Exit the loop if the username is found
+                }
             }
+            // If the loop completes without finding the username, it's available
+            System.out.println("Username " + getUserInputLastName() + " is available.");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return true;
+
     }
     
     public String getLoggedOnUser() {

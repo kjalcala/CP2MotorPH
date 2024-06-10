@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -104,6 +104,9 @@
               <Color blue="ff" green="eb" red="eb" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTabbedPane1MouseClicked"/>
+          </Events>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
           <SubComponents>
@@ -237,6 +240,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Full Name Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Container class="javax.swing.JPanel" name="jPanel4">
 
@@ -263,6 +269,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Position Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="profileEmployeeNumberLbl">
                       <Properties>
@@ -274,6 +283,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Employee ID Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -410,6 +422,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Last Name Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="profileFirstNameLbl">
                       <Properties>
@@ -418,6 +433,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="First Name Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel9">
                       <Properties>
@@ -459,6 +477,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Birthday Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="profileContactNoLbl">
                       <Properties>
@@ -467,6 +488,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Contact No. Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JTextArea" name="profileAddressTxtArea">
                       <Properties>
@@ -490,6 +514,9 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -656,6 +683,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Basic Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="profileHourlyRateLbl">
                       <Properties>
@@ -664,6 +694,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Hourly Rate Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="profileRiceSubsidyLbl">
                       <Properties>
@@ -672,6 +705,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Rice Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="profilePhoneSubsidyLbl">
                       <Properties>
@@ -680,6 +716,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Phone Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="profileClothingLbl">
                       <Properties>
@@ -688,6 +727,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Clothing Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -840,6 +882,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="SSS Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="profilePagibigLbl">
                       <Properties>
@@ -848,6 +893,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Pagibig Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="profilePhilhealthLbl">
                       <Properties>
@@ -856,6 +904,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Philhealth Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="profileTinLbl">
                       <Properties>
@@ -864,6 +915,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Tin Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1135,6 +1189,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Basic Pay Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payslipRiceAllowanceLbl">
                       <Properties>
@@ -1146,6 +1203,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Rice Allowance Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payslipPhoneAllowanceLbl">
                       <Properties>
@@ -1157,6 +1217,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Phone Allowance Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payslipClothingAllowanceLbl">
                       <Properties>
@@ -1168,6 +1231,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Clothing Allowance Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel21">
                       <Properties>
@@ -1245,6 +1311,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="SSS placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payslipPhilhealthLbl">
                       <Properties>
@@ -1256,6 +1325,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Philhealth placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payslipPagibigLbl">
                       <Properties>
@@ -1267,6 +1339,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Pagibig placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payslipWithholdingTaxLbl">
                       <Properties>
@@ -1278,6 +1353,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Witholding tax placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="PayslipTotalDeductionLbl">
                       <Properties>
@@ -1289,6 +1367,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Total Deduction placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payslipTotalNetEarningsLbl">
                       <Properties>
@@ -1300,6 +1381,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Total Net Earning placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1811,6 +1895,107 @@
                     </Component>
                   </SubComponents>
                 </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="jPanel15">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="tab6">
+                    <Property name="tabTitle" type="java.lang.String" value="tab6"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="393" max="-2" attributes="0"/>
+                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Component id="recordsUpdateButton" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" min="-2" pref="1218" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="32" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" pref="505" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="recordsUpdateButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JButton" name="jButton2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="jButton2"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="jTable1">
+                      <Properties>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="4" rowCount="4">
+                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                          </Table>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jTable1.getSelectionModel().addListSelectionListener(new ListSelectionListener() {&#xa;            @Override&#xa;            public void valueChanged(ListSelectionEvent e) {&#xa;                if (!e.getValueIsAdjusting()) {&#xa;                    int selectedRow = jTable1.getSelectedRow();&#xa;                    if (selectedRow != -1) {&#xa;                        // Enable the update button&#xa;                        recordsUpdateButton.setEnabled(true);&#xa;                    }&#xa;                }&#xa;            }&#xa;        });"/>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                      </AuxValues>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JButton" name="recordsUpdateButton">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="UPDATE"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="recordsUpdateButton.setEnabled(false); // Initially disable the button&#xa;        recordsUpdateButton.addActionListener(new ActionListener() {&#xa;            @Override&#xa;            public void actionPerformed(ActionEvent e) {&#xa;                int selectedRow = jTable1.getSelectedRow();&#xa;                if (selectedRow != -1) {&#xa;                    // Retrieve data from selected row&#xa;                    String recordEmployeeNumber = (String) jTable1.getValueAt(selectedRow, 0);&#xa;                    String recordLastName = (String) jTable1.getValueAt(selectedRow, 1);&#xa;                    String recordFirstName = (String) jTable1.getValueAt(selectedRow, 2);&#xa;                    int selectedEmployeeRow = jTable1.getSelectedRow();  &#xa;                    EmployeeDataEditor ede = new EmployeeDataEditor();&#xa;                    try{&#xa;                        ede.updateDataForm(selectedEmployeeRow, recordEmployeeNumber, recordLastName, recordFirstName);&#xa;                        } catch (IOException | CsvException v) {&#xa;                        v.printStackTrace();&#xa;                        }&#xa;&#xa;                    &#xa;                    &#xa;                        &#xa;                        &#xa;                    &#xa;}&#xa;                    &#xa;            }&#xa;        });"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JButton" name="jButton3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="DELETE"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>

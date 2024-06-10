@@ -4,6 +4,14 @@
  */
 package com.motorph.cp2motorph;
 
+import com.opencsv.exceptions.CsvException;
+import java.io.IOException;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author kjalcala
@@ -129,6 +137,12 @@ public class MotorPH extends javax.swing.JFrame {
         payrollWithholdingTaxLbl = new javax.swing.JLabel();
         PayrollTotalDeductionLbl = new javax.swing.JLabel();
         payrollTotalNetEarningsLbl = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        recordsUpdateButton = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
@@ -151,6 +165,11 @@ public class MotorPH extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(235, 235, 255));
 
         jTabbedPane1.setBackground(new java.awt.Color(235, 235, 255));
+        jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPane1MouseClicked(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(235, 235, 255));
 
@@ -1063,6 +1082,104 @@ public class MotorPH extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Payroll", jPanel7);
 
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+        jTable1.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
+                    int selectedRow = jTable1.getSelectedRow();
+                    if (selectedRow != -1) {
+                        // Enable the update button
+                        recordsUpdateButton.setEnabled(true);
+                    }
+                }
+            }
+        });
+
+        recordsUpdateButton.setText("UPDATE");
+
+        jButton3.setText("DELETE");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addGap(393, 393, 393)
+                        .addComponent(jButton3)
+                        .addGap(34, 34, 34)
+                        .addComponent(recordsUpdateButton))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel15Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(recordsUpdateButton)
+                        .addComponent(jButton3)))
+                .addGap(18, 18, 18))
+        );
+
+        recordsUpdateButton.setEnabled(false); // Initially disable the button
+        recordsUpdateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int selectedRow = jTable1.getSelectedRow();
+                if (selectedRow != -1) {
+                    // Retrieve data from selected row
+                    String recordEmployeeNumber = (String) jTable1.getValueAt(selectedRow, 0);
+                    String recordLastName = (String) jTable1.getValueAt(selectedRow, 1);
+                    String recordFirstName = (String) jTable1.getValueAt(selectedRow, 2);
+                    int selectedEmployeeRow = jTable1.getSelectedRow();
+                    EmployeeDataEditor ede = new EmployeeDataEditor();
+                    try{
+                        ede.updateDataForm(selectedEmployeeRow, recordEmployeeNumber, recordLastName, recordFirstName);
+                    } catch (IOException | CsvException v) {
+                        v.printStackTrace();
+                    }
+
+                }
+
+            }
+        });
+
+        jTabbedPane1.addTab("tab6", jPanel15);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -1106,13 +1223,13 @@ public class MotorPH extends javax.swing.JFrame {
         payrollEmployeeNumber = Integer.parseInt(payrollEmployeeNumberTextField.getText());
         EmployeeDetails empDet = new EmployeeDetails();
         Employee[] employees = empDet.getEmployees();
-        
+
         if (payrollEmployeeNumber < 1 || payrollEmployeeNumber > employees.length) {
             throw new IndexOutOfBoundsException("Employee number is out of range");
         }
-        
+
         Employee employee = employees[payrollEmployeeNumber - 1];
-        
+
         payrollPhilhealthLbl.setText(String.valueOf(philhealthComputation.philhealthComputation(employee.getBasicSalary())));
         payrollPagibigLbl.setText(String.valueOf(PagibigComputation.pagibigComputation(employee.getBasicSalary())));
         payrollSssLbl.setText(String.valueOf(SssComputation.sssComputation(employee.getBasicSalary())));
@@ -1127,47 +1244,34 @@ public class MotorPH extends javax.swing.JFrame {
         payrollTotalNetEarningsLbl.setText(String.valueOf(employee.getBasicSalary()- totalDeduction));
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        EmployeeDataEditor.employeeReader();
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTabbedPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane1MouseClicked
+        loadCSVDataIntoTable();
+    }//GEN-LAST:event_jTabbedPane1MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public void fillInformation() {
-        
-        login lgn1 = new login();
-        EmployeeDetails empDet = new EmployeeDetails();
-        Employee[] employees = empDet.getEmployees();
-        Employee employee = employees[employeeNumber - 1];
-        profileFullNameLbl.setText(employee.getLastName() + ", " + employee.getFirstName());
-        profilePositionLbl.setText(employee.getPosition());
-        profileEmployeeNumberLbl.setText("Employee Number: " +String.valueOf(employee.getEmployeeNumber()));
-        profilePersonalInformationLastNameLbl.setText(employee.getLastName());
-        profileFirstNameLbl.setText(employee.getFirstName());
-        profileBirthdayLbl.setText(employee.getBirthday());
-        profileContactNoLbl.setText(employee.getPhoneNumber());
-        profileAddressTxtArea.setText(employee.getAddress());
-        profileBasicSalaryLbl.setText(String.valueOf(employee.getBasicSalary()));
-        profileHourlyRateLbl.setText(String.valueOf(employee.getHourlyRate()));
-        profileRiceSubsidyLbl.setText(String.valueOf(employee.getRiceSubsidy()));
-        profilePhoneSubsidyLbl.setText(String.valueOf(employee.getPhoneAllowance()));
-        profileClothingLbl.setText(String.valueOf(employee.getClothingAllowance()));
-        profileSssLbl.setText(employee.getSssNumber());
-        profilePagibigLbl.setText(employee.getPagibigNumber());
-        profilePhilhealthLbl.setText(employee.getPhilhealthNumber());
-        profileTinLbl.setText(employee.getTinNumber());
-        
-        payslipBasicPayLbl.setText(String.valueOf(employee.getBasicSalary()));
-        payslipClothingAllowanceLbl.setText(String.valueOf(employee.getClothingAllowance()));
-        payslipRiceAllowanceLbl.setText(String.valueOf(employee.getRiceSubsidy()));
-        payslipPhoneAllowanceLbl.setText(String.valueOf(employee.getPhoneAllowance()));
-        payslipPhilhealthLbl.setText(String.valueOf(philhealthComputation.philhealthComputation(employee.getBasicSalary())));
-        payslipPagibigLbl.setText(String.valueOf(PagibigComputation.pagibigComputation(employee.getBasicSalary())));
-        payslipSssLbl.setText(String.valueOf(SssComputation.sssComputation(employee.getBasicSalary())));
-        Double totalDeduction = (philhealthComputation.philhealthComputation(employee.getBasicSalary())) + (SssComputation.sssComputation(employee.getBasicSalary())) + (PagibigComputation.pagibigComputation(employee.getBasicSalary()));
-        payslipWithholdingTaxLbl.setText(String.valueOf(taxComputation.taxComputation(employee.getBasicSalary(), totalDeduction)));
-        Double totalDeductionWithTax = totalDeduction + taxComputation.taxComputation(employee.getBasicSalary(), totalDeduction);
-        PayslipTotalDeductionLbl.setText(String.valueOf(totalDeductionWithTax));
-        payslipTotalNetEarningsLbl.setText(String.valueOf(employee.getBasicSalary()- totalDeduction));
-    }
     
+    
+    
+    private void loadCSVDataIntoTable() {
+        EmployeeDataEditor loader = new EmployeeDataEditor();
+        try {
+            DefaultTableModel model = loader.loadCSV();
+            jTable1.setModel(model);
+        } catch (IOException | CsvException e) {
+            e.printStackTrace();
+        }
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1193,6 +1297,7 @@ public class MotorPH extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MotorPH().setVisible(true);
@@ -1202,8 +1307,10 @@ public class MotorPH extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel PayrollTotalDeductionLbl;
-    private javax.swing.JLabel PayslipTotalDeductionLbl;
+    public javax.swing.JLabel PayslipTotalDeductionLbl;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1251,6 +1358,7 @@ public class MotorPH extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1259,10 +1367,12 @@ public class MotorPH extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    public javax.swing.JTable jTable1;
     private javax.swing.JLabel payroll;
     private javax.swing.JLabel payrollBasicPayLbl;
     private javax.swing.JLabel payrollClothingAllowanceLbl;
@@ -1274,33 +1384,34 @@ public class MotorPH extends javax.swing.JFrame {
     private javax.swing.JLabel payrollSssLbl;
     private javax.swing.JLabel payrollTotalNetEarningsLbl;
     private javax.swing.JLabel payrollWithholdingTaxLbl;
-    private javax.swing.JLabel payslipBasicPayLbl;
-    private javax.swing.JLabel payslipClothingAllowanceLbl;
-    private javax.swing.JLabel payslipPagibigLbl;
-    private javax.swing.JLabel payslipPhilhealthLbl;
-    private javax.swing.JLabel payslipPhoneAllowanceLbl;
-    private javax.swing.JLabel payslipRiceAllowanceLbl;
-    private javax.swing.JLabel payslipSssLbl;
-    private javax.swing.JLabel payslipTotalNetEarningsLbl;
-    private javax.swing.JLabel payslipWithholdingTaxLbl;
-    private javax.swing.JTextArea profileAddressTxtArea;
-    private javax.swing.JLabel profileBasicSalaryLbl;
-    private javax.swing.JLabel profileBirthdayLbl;
-    private javax.swing.JLabel profileClothingLbl;
-    private javax.swing.JLabel profileContactNoLbl;
-    private javax.swing.JLabel profileEmployeeNumberLbl;
-    private javax.swing.JLabel profileFirstNameLbl;
-    private javax.swing.JLabel profileFullNameLbl;
-    private javax.swing.JLabel profileHourlyRateLbl;
-    private javax.swing.JLabel profilePagibigLbl;
+    public javax.swing.JLabel payslipBasicPayLbl;
+    public javax.swing.JLabel payslipClothingAllowanceLbl;
+    public javax.swing.JLabel payslipPagibigLbl;
+    public javax.swing.JLabel payslipPhilhealthLbl;
+    public javax.swing.JLabel payslipPhoneAllowanceLbl;
+    public javax.swing.JLabel payslipRiceAllowanceLbl;
+    public javax.swing.JLabel payslipSssLbl;
+    public javax.swing.JLabel payslipTotalNetEarningsLbl;
+    public javax.swing.JLabel payslipWithholdingTaxLbl;
+    public javax.swing.JTextArea profileAddressTxtArea;
+    public javax.swing.JLabel profileBasicSalaryLbl;
+    public javax.swing.JLabel profileBirthdayLbl;
+    public javax.swing.JLabel profileClothingLbl;
+    public javax.swing.JLabel profileContactNoLbl;
+    public javax.swing.JLabel profileEmployeeNumberLbl;
+    public javax.swing.JLabel profileFirstNameLbl;
+    public javax.swing.JLabel profileFullNameLbl;
+    public javax.swing.JLabel profileHourlyRateLbl;
+    public javax.swing.JLabel profilePagibigLbl;
     private javax.swing.JPanel profilePanel;
-    private javax.swing.JLabel profilePersonalInformationLastNameLbl;
+    public javax.swing.JLabel profilePersonalInformationLastNameLbl;
     private javax.swing.JPanel profilePersonalInformationPanel;
-    private javax.swing.JLabel profilePhilhealthLbl;
-    private javax.swing.JLabel profilePhoneSubsidyLbl;
-    private javax.swing.JLabel profilePositionLbl;
-    private javax.swing.JLabel profileRiceSubsidyLbl;
-    private javax.swing.JLabel profileSssLbl;
-    private javax.swing.JLabel profileTinLbl;
+    public javax.swing.JLabel profilePhilhealthLbl;
+    public javax.swing.JLabel profilePhoneSubsidyLbl;
+    public javax.swing.JLabel profilePositionLbl;
+    public javax.swing.JLabel profileRiceSubsidyLbl;
+    public javax.swing.JLabel profileSssLbl;
+    public javax.swing.JLabel profileTinLbl;
+    private javax.swing.JButton recordsUpdateButton;
     // End of variables declaration//GEN-END:variables
 }
