@@ -4,6 +4,7 @@
  */
 package com.motorph.cp2motorph;
 
+import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 import java.io.IOException;
 import javax.swing.table.DefaultTableModel;
@@ -11,6 +12,8 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 /**
  *
@@ -113,7 +116,7 @@ public class MotorPH extends javax.swing.JFrame {
         jPanel13 = new javax.swing.JPanel();
         payroll = new javax.swing.JLabel();
         payrollEmployeeNumberTextField = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        payrollSubmitButton = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
@@ -135,7 +138,7 @@ public class MotorPH extends javax.swing.JFrame {
         payrollPhilhealthLbl = new javax.swing.JLabel();
         payrollPagibigLbl = new javax.swing.JLabel();
         payrollWithholdingTaxLbl = new javax.swing.JLabel();
-        PayrollTotalDeductionLbl = new javax.swing.JLabel();
+        payrollTotalDeductionLbl = new javax.swing.JLabel();
         payrollTotalNetEarningsLbl = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
@@ -145,7 +148,6 @@ public class MotorPH extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setResizable(false);
 
@@ -843,12 +845,12 @@ public class MotorPH extends javax.swing.JFrame {
         payrollEmployeeNumberTextField.setForeground(new java.awt.Color(102, 102, 102));
         payrollEmployeeNumberTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jButton1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 153, 204));
-        jButton1.setText("SUBMIT");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        payrollSubmitButton.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        payrollSubmitButton.setForeground(new java.awt.Color(0, 153, 204));
+        payrollSubmitButton.setText("SUBMIT");
+        payrollSubmitButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                payrollSubmitButtonMouseClicked(evt);
             }
         });
 
@@ -862,7 +864,7 @@ public class MotorPH extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(payrollEmployeeNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(payrollSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
@@ -872,7 +874,7 @@ public class MotorPH extends javax.swing.JFrame {
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(payroll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(payrollEmployeeNumberTextField)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(payrollSubmitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
@@ -958,9 +960,9 @@ public class MotorPH extends javax.swing.JFrame {
         payrollWithholdingTaxLbl.setForeground(new java.awt.Color(102, 102, 102));
         payrollWithholdingTaxLbl.setText("Witholding tax placeholder");
 
-        PayrollTotalDeductionLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        PayrollTotalDeductionLbl.setForeground(new java.awt.Color(102, 102, 102));
-        PayrollTotalDeductionLbl.setText("Total Deduction placeholder");
+        payrollTotalDeductionLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        payrollTotalDeductionLbl.setForeground(new java.awt.Color(102, 102, 102));
+        payrollTotalDeductionLbl.setText("Total Deduction placeholder");
 
         payrollTotalNetEarningsLbl.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         payrollTotalNetEarningsLbl.setForeground(new java.awt.Color(102, 102, 102));
@@ -1013,7 +1015,7 @@ public class MotorPH extends javax.swing.JFrame {
                             .addComponent(payrollSssLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(payrollPagibigLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(payrollWithholdingTaxLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(PayrollTotalDeductionLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(payrollTotalDeductionLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(payrollTotalNetEarningsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(196, Short.MAX_VALUE))
         );
@@ -1051,7 +1053,7 @@ public class MotorPH extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel42)
-                    .addComponent(PayrollTotalDeductionLbl))
+                    .addComponent(payrollTotalDeductionLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
@@ -1178,7 +1180,7 @@ public class MotorPH extends javax.swing.JFrame {
             }
         });
 
-        jTabbedPane1.addTab("tab6", jPanel15);
+        jTabbedPane1.addTab("Records", jPanel15);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -1219,30 +1221,53 @@ public class MotorPH extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void payrollSubmitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_payrollSubmitButtonMouseClicked
         payrollEmployeeNumber = Integer.parseInt(payrollEmployeeNumberTextField.getText());
-        EmployeeDetails empDet = new EmployeeDetails();
-        Employee[] employees = empDet.getEmployees();
-
-        if (payrollEmployeeNumber < 1 || payrollEmployeeNumber > employees.length) {
-            throw new IndexOutOfBoundsException("Employee number is out of range");
+        
+        String file = "src\\employee_data.csv";
+        BufferedReader reader = null;
+        String line = "";
+        try (CSVReader reader1 = new CSVReader(new FileReader("src\\employee_data.csv"))) {
+            String[] info;
+            while ((info = reader1.readNext()) != null) {
+                String username = info[1].trim(); 
+                if (info[0].equalsIgnoreCase(String.valueOf(payrollEmployeeNumber))) {
+                    String lastName = info[1];
+                    String firstName = info[2];
+                    String birthday = info[3];
+                    String address = info[4];
+                    String phoneNumber = info[5];
+                    String sssNumber = info[6];
+                    String philhealthNumber = info[7];
+                    String tinNumber = info[8];
+                    String pagibigNumber = info[9];
+                    String status = info[10];
+                    String position = info[11];
+                    String immediateSupervisor = info[12];
+                    Double basicSalary = Double.parseDouble(info[13]);
+                    Double riceSubsidy = Double.parseDouble(info[14]);
+                    Double phoneAllowance = Double.parseDouble(info[15]);
+                    Double clothingAllowance = Double.parseDouble(info[16]);
+                    Double grossSemiMonthlyRate = Double.parseDouble(info[17]);
+                    Double hourlyRate = Double.parseDouble(info[18]);
+                    System.out.println("this is setpos: " + info[11]);
+                    
+                    payrollTabSetText(basicSalary, hourlyRate, riceSubsidy, phoneAllowance, clothingAllowance);
+                    
+                }
+                
+               
+            }
         }
-
-        Employee employee = employees[payrollEmployeeNumber - 1];
-
-        payrollPhilhealthLbl.setText(String.valueOf(philhealthComputation.philhealthComputation(employee.getBasicSalary())));
-        payrollPagibigLbl.setText(String.valueOf(PagibigComputation.pagibigComputation(employee.getBasicSalary())));
-        payrollSssLbl.setText(String.valueOf(SssComputation.sssComputation(employee.getBasicSalary())));
-        Double totalDeduction = (philhealthComputation.philhealthComputation(employee.getBasicSalary())) + (SssComputation.sssComputation(employee.getBasicSalary())) + (PagibigComputation.pagibigComputation(employee.getBasicSalary()));
-        payrollWithholdingTaxLbl.setText(String.valueOf(taxComputation.taxComputation(employee.getBasicSalary(), totalDeduction)));
-        payrollBasicPayLbl.setText(String.valueOf(employee.getBasicSalary()));
-        payrollClothingAllowanceLbl.setText(String.valueOf(employee.getClothingAllowance()));
-        payrollRiceAllowanceLbl.setText(String.valueOf(employee.getRiceSubsidy()));
-        payrollPhoneAllowanceLbl.setText(String.valueOf(employee.getPhoneAllowance()));
-        Double totalDeductionWithTax = totalDeduction + taxComputation.taxComputation(employee.getBasicSalary(), totalDeduction);
-        PayrollTotalDeductionLbl.setText(String.valueOf(totalDeductionWithTax));
-        payrollTotalNetEarningsLbl.setText(String.valueOf(employee.getBasicSalary()- totalDeduction));
-    }//GEN-LAST:event_jButton1MouseClicked
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        finally{
+           
+        }
+        
+        
+    }//GEN-LAST:event_payrollSubmitButtonMouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         EmployeeDataEditor.employeeReader();
@@ -1283,6 +1308,22 @@ public class MotorPH extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
+    
+    public static void payrollTabSetText(double basicSalary, double hourlyRate, double riceSubsidy, double phoneAllowance, double clothingAllowance){                   
+        payrollBasicPayLbl.setText(String.valueOf(basicSalary));
+        payrollClothingAllowanceLbl.setText(String.valueOf(clothingAllowance));
+        payrollRiceAllowanceLbl.setText(String.valueOf(riceSubsidy));
+        payrollPhoneAllowanceLbl.setText(String.valueOf(phoneAllowance));
+        payrollPhilhealthLbl.setText(String.valueOf(philhealthComputation.philhealthComputation(basicSalary)));
+        payrollPagibigLbl.setText(String.valueOf(PagibigComputation.pagibigComputation(basicSalary)));
+        payrollSssLbl.setText(String.valueOf(SssComputation.sssComputation(basicSalary)));
+        Double totalDeduction = (philhealthComputation.philhealthComputation(basicSalary)) + (SssComputation.sssComputation(basicSalary)) + (PagibigComputation.pagibigComputation(basicSalary));
+        payrollWithholdingTaxLbl.setText(String.valueOf(taxComputation.taxComputation(basicSalary, totalDeduction)));
+        Double totalDeductionWithTax = totalDeduction + taxComputation.taxComputation(basicSalary, totalDeduction);
+        payrollTotalDeductionLbl.setText(String.valueOf(totalDeductionWithTax));
+        payrollTotalNetEarningsLbl.setText(String.valueOf(basicSalary- totalDeductionWithTax));
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1317,9 +1358,7 @@ public class MotorPH extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel PayrollTotalDeductionLbl;
     public javax.swing.JLabel PayslipTotalDeductionLbl;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
@@ -1385,16 +1424,18 @@ public class MotorPH extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JTable jTable1;
     private javax.swing.JLabel payroll;
-    private javax.swing.JLabel payrollBasicPayLbl;
-    private javax.swing.JLabel payrollClothingAllowanceLbl;
+    public static javax.swing.JLabel payrollBasicPayLbl;
+    public static javax.swing.JLabel payrollClothingAllowanceLbl;
     private javax.swing.JTextField payrollEmployeeNumberTextField;
-    private javax.swing.JLabel payrollPagibigLbl;
-    private javax.swing.JLabel payrollPhilhealthLbl;
-    private javax.swing.JLabel payrollPhoneAllowanceLbl;
-    private javax.swing.JLabel payrollRiceAllowanceLbl;
-    private javax.swing.JLabel payrollSssLbl;
-    private javax.swing.JLabel payrollTotalNetEarningsLbl;
-    private javax.swing.JLabel payrollWithholdingTaxLbl;
+    public static javax.swing.JLabel payrollPagibigLbl;
+    public static javax.swing.JLabel payrollPhilhealthLbl;
+    public static javax.swing.JLabel payrollPhoneAllowanceLbl;
+    public static javax.swing.JLabel payrollRiceAllowanceLbl;
+    public static javax.swing.JLabel payrollSssLbl;
+    private javax.swing.JButton payrollSubmitButton;
+    public static javax.swing.JLabel payrollTotalDeductionLbl;
+    public static javax.swing.JLabel payrollTotalNetEarningsLbl;
+    public static javax.swing.JLabel payrollWithholdingTaxLbl;
     public javax.swing.JLabel payslipBasicPayLbl;
     public javax.swing.JLabel payslipClothingAllowanceLbl;
     public javax.swing.JLabel payslipPagibigLbl;

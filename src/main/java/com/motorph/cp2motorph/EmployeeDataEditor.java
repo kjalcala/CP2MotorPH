@@ -4,12 +4,14 @@
  */
 package com.motorph.cp2motorph;
 
+import static com.motorph.cp2motorph.LoggedOnUser.getPosition;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 import com.opencsv.exceptions.CsvException;
+import java.io.BufferedReader;
 import java.io.FileWriter;
 import javax.swing.JTable;
 
@@ -90,24 +92,21 @@ public class EmployeeDataEditor {
     }
     
     public void deleteRowFromCSV(int rowIndex) throws IOException, CsvException {
-    // Read all lines from the CSV file
-    try (CSVReader reader = new CSVReader(new FileReader("src\\employee_data.csv"))) {
-        List<String[]> allRows = reader.readAll();
+        try (CSVReader reader = new CSVReader(new FileReader("src\\employee_data.csv"))) {
+            List<String[]> allRows = reader.readAll();
 
-        // Check if the rowIndex is valid
-        if (rowIndex >= 0 && rowIndex < allRows.size()) {
-            // Remove the row at the specified index
-            allRows.remove(rowIndex);
+            if (rowIndex >= 0 && rowIndex < allRows.size()) {
+                allRows.remove(rowIndex);
 
-            // Write the updated list back to the CSV file
-            try (CSVWriter writer = new CSVWriter(new FileWriter("src\\employee_data.csv"))) {
-                writer.writeAll(allRows);
+                try (CSVWriter writer = new CSVWriter(new FileWriter("src\\employee_data.csv"))) {
+                    writer.writeAll(allRows);
+                }
+            } else {
+                System.out.println("Invalid row index for deletion.");
             }
-        } else {
-            System.out.println("Invalid row index for deletion.");
         }
     }
-}
+    
 }
     
 

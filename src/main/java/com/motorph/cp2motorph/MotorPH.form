@@ -3,9 +3,6 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1280, 720]"/>
-    </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1280, 720]"/>
     </Property>
@@ -1472,7 +1469,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="payrollEmployeeNumberTextField" min="-2" pref="98" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="137" max="-2" attributes="0"/>
+                              <Component id="payrollSubmitButton" min="-2" pref="137" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -1484,7 +1481,7 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="payroll" max="32767" attributes="0"/>
                                   <Component id="payrollEmployeeNumberTextField" max="32767" attributes="0"/>
-                                  <Component id="jButton1" max="32767" attributes="0"/>
+                                  <Component id="payrollSubmitButton" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace pref="34" max="32767" attributes="0"/>
                           </Group>
@@ -1514,7 +1511,7 @@
                         <Property name="horizontalAlignment" type="int" value="0"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButton1">
+                    <Component class="javax.swing.JButton" name="payrollSubmitButton">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="SansSerif" size="14" style="1"/>
@@ -1525,7 +1522,7 @@
                         <Property name="text" type="java.lang.String" value="SUBMIT"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="payrollSubmitButtonMouseClicked"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -1590,7 +1587,7 @@
                                           <Component id="payrollSssLbl" min="-2" pref="123" max="-2" attributes="0"/>
                                           <Component id="payrollPagibigLbl" min="-2" pref="123" max="-2" attributes="0"/>
                                           <Component id="payrollWithholdingTaxLbl" min="-2" pref="123" max="-2" attributes="0"/>
-                                          <Component id="PayrollTotalDeductionLbl" min="-2" pref="123" max="-2" attributes="0"/>
+                                          <Component id="payrollTotalDeductionLbl" min="-2" pref="123" max="-2" attributes="0"/>
                                           <Component id="payrollTotalNetEarningsLbl" min="-2" pref="123" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -1638,7 +1635,7 @@
                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="PayrollTotalDeductionLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="payrollTotalDeductionLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1727,6 +1724,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Basic Pay Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payrollRiceAllowanceLbl">
                       <Properties>
@@ -1738,6 +1738,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Rice Allowance Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payrollPhoneAllowanceLbl">
                       <Properties>
@@ -1749,6 +1752,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Phone Allowance Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payrollClothingAllowanceLbl">
                       <Properties>
@@ -1760,6 +1766,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Clothing Allowance Placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel38">
                       <Properties>
@@ -1837,6 +1846,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="SSS placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payrollPhilhealthLbl">
                       <Properties>
@@ -1848,6 +1860,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Philhealth placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payrollPagibigLbl">
                       <Properties>
@@ -1859,6 +1874,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Pagibig placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payrollWithholdingTaxLbl">
                       <Properties>
@@ -1870,8 +1888,11 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Witholding tax placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                      </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="PayrollTotalDeductionLbl">
+                    <Component class="javax.swing.JLabel" name="payrollTotalDeductionLbl">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="SansSerif" size="12" style="1"/>
@@ -1881,6 +1902,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Total Deduction placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                      </AuxValues>
                     </Component>
                     <Component class="javax.swing.JLabel" name="payrollTotalNetEarningsLbl">
                       <Properties>
@@ -1892,6 +1916,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Total Net Earning placeholder"/>
                       </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+                      </AuxValues>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1900,8 +1927,8 @@
             <Container class="javax.swing.JPanel" name="jPanel15">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="tab6">
-                    <Property name="tabTitle" type="java.lang.String" value="tab6"/>
+                  <JTabbedPaneConstraints tabName="Records">
+                    <Property name="tabTitle" type="java.lang.String" value="Records"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
