@@ -1254,7 +1254,18 @@ public class MotorPH extends javax.swing.JFrame {
     }//GEN-LAST:event_jTabbedPane1MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        int selectedRow = jTable1.getSelectedRow();
+        if (selectedRow != -1) {
+            EmployeeDataEditor ede = new EmployeeDataEditor();
+            ede.deleteSelectedRow(jTable1);
+            try{
+                ede.deleteRowFromCSV(selectedRow + 1);
+            } catch ( IOException | CsvException x ) {
+                x.printStackTrace();
+            }
+        }
+        
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -1263,7 +1274,7 @@ public class MotorPH extends javax.swing.JFrame {
     
     
     
-    private void loadCSVDataIntoTable() {
+    public void loadCSVDataIntoTable() {
         EmployeeDataEditor loader = new EmployeeDataEditor();
         try {
             DefaultTableModel model = loader.loadCSV();

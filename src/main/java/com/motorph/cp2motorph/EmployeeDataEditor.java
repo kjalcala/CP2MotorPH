@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.List;
 import com.opencsv.exceptions.CsvException;
 import java.io.FileWriter;
+import javax.swing.JTable;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -69,14 +70,44 @@ public class EmployeeDataEditor {
         uform.updateLastName.setText(lastName);
         uform.updateFirstName.setText(firstName);
         int rowIndex = selectedEmployeeRow;
-        
+        uform.setSelectedRow(String.valueOf(rowIndex));
         String updatedEmployeeNumber = uform.updateEmployeeNumber.getText();
         String updatedLastName = uform.updateLastName.getText();
         String updatedFirstName = uform.updateFirstName.getText();
         
         uform.show();
-        updateEmployeeData(rowIndex, updatedEmployeeNumber, updatedLastName, updatedFirstName);
+  
         }
+    
+    public void deleteSelectedRow(JTable table) {
+        int selectedRow = table.getSelectedRow();
+        if (selectedRow != -1) {
+            DefaultTableModel model = (DefaultTableModel) table.getModel();
+            model.removeRow(selectedRow);
+        } else {
+            System.out.println("No row selected for deletion.");
+        }
+    }
+    
+    public void deleteRowFromCSV(int rowIndex) throws IOException, CsvException {
+    // Read all lines from the CSV file
+    try (CSVReader reader = new CSVReader(new FileReader("src\\employee_data.csv"))) {
+        List<String[]> allRows = reader.readAll();
+
+        // Check if the rowIndex is valid
+        if (rowIndex >= 0 && rowIndex < allRows.size()) {
+            // Remove the row at the specified index
+            allRows.remove(rowIndex);
+
+            // Write the updated list back to the CSV file
+            try (CSVWriter writer = new CSVWriter(new FileWriter("src\\employee_data.csv"))) {
+                writer.writeAll(allRows);
+            }
+        } else {
+            System.out.println("Invalid row index for deletion.");
+        }
+    }
+}
 }
     
 

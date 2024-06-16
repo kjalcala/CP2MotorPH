@@ -11,8 +11,9 @@ import java.io.IOException;
  *
  * @author kjalcala
  */
-public class updateForm extends javax.swing.JFrame {
 
+public class updateForm extends javax.swing.JFrame {
+    public String selectedRow;
     /**
      * Creates new form updateForm
      */
@@ -59,6 +60,11 @@ public class updateForm extends javax.swing.JFrame {
         updateBirthday.setText("jTextField1");
 
         updateFormUpdateButton.setText("UPDATE");
+        updateFormUpdateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateFormUpdateButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -126,20 +132,29 @@ public class updateForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public void updateFormUpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+    private void updateFormUpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateFormUpdateButtonActionPerformed
         EmployeeDataEditor ede = new EmployeeDataEditor();
         MotorPH mph = new MotorPH();
-        int selectedrow = mph.jTable1.getSelectedRow();
         try{
-            ede.updateEmployeeData(selectedrow, updateEmployeeNumber.getText(), updateLastName.getText(), updateFirstName.getText());
+            System.out.println("selectedrow is: " + selectedRow + "updateEmployeeNumber" + updateEmployeeNumber.getText() + "updateLastName" + updateLastName.getText() + "updateFirstName" + updateFirstName.getText());
+            ede.updateEmployeeData(Integer.parseInt(selectedRow), updateEmployeeNumber.getText(), updateLastName.getText(), updateFirstName.getText());
+            System.out.println("updateFormUpdateButton is running");
+            mph.loadCSVDataIntoTable();
+            dispose();
         } catch (IOException | CsvException c) {
             c.printStackTrace();
         }
-        dispose();
-    }   
+        
+    }//GEN-LAST:event_updateFormUpdateButtonActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    
+    
+    public void setSelectedRow(String selectedRow1){
+        selectedRow = selectedRow1;
+    }
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
